@@ -1,5 +1,6 @@
 const btn = document.getElementById('fetchQuotes')
 btn.addEventListener('click',()=>{
+    show.innerHTML = '...loading'
     const url = 'https://api.quotable.io/random'
     fetch(url)
     .then(response=>response.json())
@@ -12,5 +13,6 @@ btn.addEventListener('click',()=>{
     })
     .catch((err)=>{
         console.log(err);
+        show.innerHTML = err
     })
 })
